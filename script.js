@@ -33,7 +33,7 @@ const marker = L.marker([51.5, -0.09], { icon: myIcon }).addTo(map);
  * @returns {Promise<Object>} - A promise resolving to location data.
  */
 async function fetchIpInfo(ip = "") {
-  return fetch(`https://ip-api.com/json/${ip}`) // Use HTTPS for security
+  return fetch(`https://ipapi.co/json/${ip}`) // Use HTTPS for security
     .then(res => {
       if (!res.ok) throw new Error('Failed to fetch IP info');
       return res.json();
