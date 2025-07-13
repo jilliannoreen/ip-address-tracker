@@ -57,23 +57,23 @@ function submitIpAddress() {
  * Displays location data in the UI and updates the map position and marker.
  *
  * @param {Object} data - The data object returned by ip-api.
- * @param {string} data.query - The queried IP address.
+ * @param {string} data.ip - The queried IP address.
  * @param {string} data.city - City name.
- * @param {string} data.countryCode - 2-letter country code.
- * @param {string} data.zip - ZIP/postal code.
+ * @param {string} data.country_code - 2-letter country code.
+ * @param {string} data.postal - ZIP/postal code.
  * @param {string} data.timezone - Timezone name.
  * @param {string} data.isp - Internet service provider.
- * @param {number} data.lat - Latitude.
- * @param {number} data.lon - Longitude.
+ * @param {number} data.latitude - Latitude.
+ * @param {number} data.longitude - Longitude.
  */
 function display(data) {
-  updateElement("ip-address", data.query);
-  updateElement("location", `${data.city}, ${data.countryCode} ${data.zip}`);
+  updateElement("ip-address", data.ip);
+  updateElement("location", `${data.city}, ${data.country_code} ${data.postal}`);
   updateElement("timezone", data.timezone);
   updateElement("isp", data.isp);
 
   // Update map view and marker position
-  const latlng = [data.lat, data.lon];
+  const latlng = [data.latitude, data.longitude];
   map.panTo(latlng);
   marker.setLatLng(latlng, {animate: true});
 }
