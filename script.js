@@ -62,7 +62,7 @@ function submitIpAddress() {
  * @param {string} data.country_code - 2-letter country code.
  * @param {string} data.postal - ZIP/postal code.
  * @param {string} data.timezone - Timezone name.
- * @param {string} data.isp - Internet service provider.
+ * @param {string} data.org - Internet service provider.
  * @param {number} data.latitude - Latitude.
  * @param {number} data.longitude - Longitude.
  */
@@ -70,7 +70,7 @@ function display(data) {
   updateElement("ip-address", data.ip);
   updateElement("location", `${data.city}, ${data.country_code} ${data.postal}`);
   updateElement("timezone", data.timezone);
-  updateElement("isp", data.isp);
+  updateElement("isp", data.org);
 
   // Update map view and marker position
   const latlng = [data.latitude, data.longitude];
